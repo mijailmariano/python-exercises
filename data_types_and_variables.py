@@ -21,7 +21,7 @@ total_rental_costs = (little_mermaid + brother_bear + hercules) * per_day_rental
 # Google pays 400 dollars per hour, Amazon 380, and Facebook 350. How much will you receive in payment for this week? 
 # You worked 10 hours for Facebook, 6 hours for Google and 4 hours for Amazon.
 
-google_pay = 400
+google_pay_rate = 400
 google_hrs_worked = 6
 
 amazon_pay_rate = 380
@@ -30,7 +30,7 @@ amazon_hrs_worked = 4
 facebook_pay_rate = 350
 facebook_hrs_worked = 10
 
-weekly_salary = (google_pay * google_hrs_worked) + (amazon_pay_rate * amazon_hrs_worked) + (facebook_pay_rate * facebook_hrs_worked)
+weekly_salary = (google_pay_rate * google_hrs_worked) + (amazon_pay_rate * amazon_hrs_worked) + (facebook_pay_rate * facebook_hrs_worked)
 
 
 # A student can be enrolled to a class only if the class is not full and the class schedule does not conflict with her current schedule.
@@ -78,3 +78,20 @@ elif customer_type != "premium member" and current_date <= offer_expiration and 
     print("offer can be applied!")
 else:
     print("offer cannot be applied.")
+
+
+# Create a variable that holds a boolean value for each of the following conditions:
+
+# the password must be at least 5 characters
+# the username must be no more than 20 characters
+# the password must not be the same as the username
+# bonus neither the username or password can start or end with whitespace
+
+#step
+#create a password variable
+    #pw must be >= 5 characters 
+    #pw cannot be the same/'similar' to username
+
+#create a username variable
+#conditions include:
+
