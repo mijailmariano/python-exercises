@@ -1,5 +1,8 @@
+from ast import While
 from calendar import weekday
+from curses.ascii import isdigit
 import datetime
+from unicodedata import digit
 
 #1a. prompt the user for a day of the week, print out whether the day is Monday or not
 
@@ -123,10 +126,54 @@ for i in range(1, 11): #this 'range' for loop will iterate from 1-11 (exlusive o
 # 88888888
 # 999999999
 
-x = 1
+for i in range(10): #the range here will be from 0-9
+    print(str(i) * i) #the "first print" will not print because the iteration begins at "0" (e.g., str(0) * 0)
+    #every other iteration will print beginning at "str(1)" thru "str(9)"
 
-for i in range(x):
-    
+#3a. break and continue
+# Prompt the user for an odd number between 1 and 50. 
+# Use a loop and a break statement to continue prompting the user if they enter invalid input. 
+# (Hint: use the isdigit method on strings to determine this). Use a loop and the continue statement to output all the odd numbers between 1 and 50, except for the number the user entered.
+# Your output should look like this:
+
+#notes
+#prompt user to type a number
+#number must be an odd number > 1 and < 50
+#start by evaluating the "enetered" string by using ".isdigit()" method
+#if string is not a numeric value, or > 1, or < 50 then prompt user to "re-enter a valid value"
+#else -- 
+#turn user_input into "integer"
+#run a "for loop" ranging 1-50
+#once for loop reaches the entered user_input; print..."yikes statement" and continue until 49
+
+user_input = input("enter an odd number from 1 - 50: ")
+
+while int(user_input) < 1 or int(user_input) > 50 or int(user_input) % 2 == 0:
+    print("Invalid input. Try again.")
+    user_input = input("enter an odd number from 1 - 50: ")
+    break
+
+for i in range(1, 50):
+    if i == int(user_input):
+        print("Yikes! Skipping number: ", i)
+        continue 
+    print("Here is an odd number: ", i)
+
+# 3b.The input function can be used to prompt for input and use that input in your python code. 
+# Prompt the user to enter a positive number and write a loop that counts from 0 to that number. 
+# (Hints: first make sure that the value the user entered is a valid number, also note that the input function returns a string, so you'll need to convert this to a numeric type.)
+
+input_positive_number = int(input("Enter a positive number: "))
+
+while type(input_positive_number) = int:
 
 
-        
+else:
+    print("Invalid input. Enter positive value.")
+    input_positive_number = int(input("Enter a positive number: "))
+
+
+
+
+# 3c. Write a program that prompts the user for a positive integer. 
+# Next write a loop that prints out the numbers from the number the user entered down to 1.

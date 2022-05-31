@@ -1,40 +1,41 @@
 # 17 list comprehension problems in python
+
 fruits = ['mango', 'kiwi', 'strawberry', 'guava', 'pineapple', 'mandarin orange']
 
 numbers = [2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 13, 17, 19, 23, 256, -8, -4, -2, 5, -9]
 
 # Example for loop solution to add 1 to each number in the list
+
 numbers_plus_one = []
 for number in numbers:
     numbers_plus_one.append(number + 1)
 
 # Example of using a list comprehension to create a list of the numbers plus one.
+
 numbers_plus_one = [number + 1 for number in numbers]
 
 # Example code that creates a list of all of the list of strings in fruits and uppercases every string
+
 output = []
 for fruit in fruits:
     output.append(fruit.upper())
     
 # Exercise 1 - rewrite the above example code using list comprehension syntax. Make a variable named uppercased_fruits to hold the output of the list comprehension. Output should be ['MANGO', 'KIWI', etc...]
+
 fruits = ['mango', 'kiwi', 'strawberry', 'guava', 'pineapple', 'mandarin orange']
 uppercased.fruits = [fruit.upper() for fruit in fruits]
 
 print(uppercased_fruits)
 
-
-
-
 # Exercise 2 - create a variable named capitalized_fruits and use list comprehension syntax to produce output like ['Mango', 'Kiwi', 'Strawberry', etc...]
+
 fruits = ['mango', 'kiwi', 'strawberry', 'guava', 'pineapple', 'mandarin orange']
 capitalized_fruits = [fruit.title() for fruit in fruits]
 
 print(capitalized_fruits)
 
-
-
-
 # Exercise 3 - Use a list comprehension to make a variable named fruits_with_more_than_two_vowels. Hint: You'll need a way to check if something is a vowel.
+
 fruits = ['mango', 'kiwi', 'strawberry', 'guava', 'pineapple', 'mandarin orange']
 vowels = ['a', 'e', 'i', 'o', 'u']
 fruits_with_more_than_two_vowels = [fruit for fruit in fruits (vowel for vowel in vowels) if v]
@@ -58,13 +59,11 @@ print(fruits_with_more_than_two_vowels)
 #if fruit contains exactly two(2) vowels, append the fruit to list
 #once i've iterated thru all 'fruits', return those fruit name that meet condition
 
-
 fruits = ['mango', 'kiwi', 'strawberry', 'guava', 'pineapple', 'mandarin orange']
 vowels = ['a', 'e', 'i', 'o', 'u']
 fruits_with_only_two_vowels = [fruit for fruit in fruits if sum(fruit.count(vowel) for vowel in vowels) == 2]
 
 print(fruits_with_only_two_vowels)
-
 
 # Exercise 5 - make a list that contains each fruit with more than 5 characters
 
@@ -158,6 +157,7 @@ numbers_plus_5 = [num+5 for num in numbers]
 print(numbers_plus_5)
 
     # BONUS Make a variable named "primes" that is a list containing the prime numbers in the numbers list. *Hint* you may want to make or find a helper function that determines if a given number is prime or not.
+
 import sympy
 numbers = [2, 1, 4, 5, 7, 29, -99, 9.17]
 primes = [num for num in numbers if sympy.isprime(num)]
