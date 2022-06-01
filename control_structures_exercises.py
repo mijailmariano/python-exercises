@@ -11,13 +11,24 @@ today = input("Input day of the week: ").capitalize()
 if today == "Monday":
 	print("Today is Monday!")
 else:
-	print("Today is not monday.")
+	print("Today is not Monday.")
 
 #1b. prompt the user for a day of the week, print out whether the day is a weekday or a weekend
 
-today = str(input("input day of the week: ").capitalize())
+today = input("input day of the week: ").capitalize()
+
+#first, make sure input is valid:
+#e.g., while today/input() not in full list of days in the week
+#print('some text telling user to re-input a value')
+#re-enter an appropriate input
+
 weekday = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"]
 weekend = ["Satuday", "Sunday"]
+days_in_the_week = ["Satuday", "Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday"]
+
+while today not in days_in_the_week:
+	print("invalid input. try again")
+	today = input("input day of the week: ").capitalize()
 
 if today in weekday:
 	print("Today is a weekday.")
@@ -133,7 +144,8 @@ for num in range(10): #the range here will be from 0-9
 #2d. break and continue
 # Prompt the user for an odd number between 1 and 50. 
 # Use a loop and a break statement to continue prompting the user if they enter invalid input. 
-# (Hint: use the isdigit method on strings to determine this). Use a loop and the continue statement to output all the odd numbers between 1 and 50, except for the number the user entered.
+# (Hint: use the isdigit method on strings to determine this). 
+# Use a loop and the continue statement to output all the odd numbers between 1 and 50, except for the number the user entered.
 # Your output should look like this:
 
 #notes
@@ -158,6 +170,18 @@ else:
 			print("Yikes! Skipping number: ", num)
 			continue 
 		print("Here is an odd number: ", num)
+
+
+# other approach
+# while True:
+# 	if num.isdigit() == False or int(num) > 50 or int(num) < 1 or int(num) % 2 == 0:
+# 		print("invalid number. try again")
+# 		num = input("enter number between 1 - 50: ") 
+# 	else: 
+# 		break
+
+# ...now you can go into the needed iteration prompt
+
 
 # 2e.The input function can be used to prompt for input and use that input in your python code. 
 # Prompt the user to enter a positive number and write a loop that counts from 0 to that number. 
@@ -190,7 +214,6 @@ else:
 
 # One of the most common interview questions for entry-level programmers is the FizzBuzz test. 
 # Developed by Imran Ghory, the test is designed to test basic looping and conditional logic skills.
-
 # Write a program that prints the numbers from 1 to 100
 
 for num in range(1, 101):
@@ -214,6 +237,17 @@ for num in range(1, 101):
 	if num%2 == 0 and num%5 == 0:
 		print("FizzBuzz", "|", num)
 
+#combining it all
+for num in range(1, 101):
+	if num%2 == 0 and num%5 == 0:
+		print("FizzBuzz", "|", num)
+	elif num % 3 == 0:
+		print("Fizz", "|", num)
+	elif num % 5 == 0:
+		print("Buzz", "|", num)
+	else:
+		print(num)
+
 # 4. Display a table of powers.
 
 # Prompt the user to enter an integer.
@@ -223,7 +257,6 @@ integer_num = input("enter an integer: ")
 
 for num in range(1, int(integer_num)+1):
 	print(num, num**2, num**3)
-
 
 # Ask if the user wants to continue.
 # Assume that the user will enter valid data.
@@ -304,15 +337,29 @@ elif numerical_grade <= 59 and numerical_grade >= 0:
 			print(i)
 	else: print("All done!")
  
+ #other class approach
+
+# while True:
+# 	num = input("please enter the numeric grade: ")
+# 	num = int(num)
+# 	if num >= 88:
+# 		print('A')
+# 	elif num etc...
+
 
 # 6. Create a list of dictionaries where each dictionary represents a book that you have read. 
 # a. Each dictionary in the list should have the keys title, author, and genre. 
 # b. Loop through the list and print out information about each book.
 # c. Prompt the user to enter a genre, then loop through your books list and print out the titles of all the books in that genre.
 
-lst_of_dictionaries = [{"title": "Man's Search for Meaning", "author": "Victor Frankl", "genre": "psychology"}, {"title": "Learn to Code By Solving Problems", "aurthor": "Daniel Zingaro", "genre": "programming"}, "title": "Nudge", "aurthor": "Daniel Zingaro", "genre": "psychology"]
+lst_of_dictionaries = [{"title": "Man's Search for Meaning", "author": "Victor Frankl", "genre": "psychology"}, {"title": "Learn to Code By Solving Problems", "author": "Daniel Zingaro", "genre": "programming"}, {"title": "Nudge", "author": "Daniel Zingaro", "genre": "psychology"}]
 print(lst_of_dictionaries[0]["title"]) #here iam looking at the "0/first indexed" dictionary, and printing the value of the key named "title"
 print(lst_of_dictionaries[1]['aurthor']) #here iam looking at the "1/second indexed" dictionary and printing the value of the key named "aurthor"
+
+#other class approach
+
+for book in lst_of_dictionaries:
+	print(f"The book {book['title']} by {book['author']} belongs to genre {book['genre']}")
 
 #notes
 #create an input variable that prompts a user to enter a book genre
