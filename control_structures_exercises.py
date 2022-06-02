@@ -358,8 +358,10 @@ print(lst_of_dictionaries[1]['aurthor']) #here iam looking at the "1/second inde
 
 #other class approach
 
-for book in lst_of_dictionaries:
-	print(f"The book {book['title']} by {book['author']} belongs to genre {book['genre']}")
+# lst_of_dictionaries = [{"title": "Man's Search for Meaning", "author": "Victor Frankl", "genre": "psychology"}, {"title": "Learn to Code By Solving Problems", "author": "Daniel Zingaro", "genre": "programming"}, {"title": "Nudge", "author": "Cass Sunstein and Richard Thaler", "genre": "psychology"}]
+
+# for book in lst_of_dictionaries:
+# 	print(f"The book {book['title']} by {book['author']} belongs to genre {book['genre']}")
 
 #notes
 #create an input variable that prompts a user to enter a book genre
