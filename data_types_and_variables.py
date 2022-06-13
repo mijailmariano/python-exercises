@@ -64,6 +64,7 @@ else: print("Full class. Student cannot enroll.")
 #2. offer expired (yes/no?) can also be a date
 
 import datetime
+from operator import truediv
 current_date = datetime.datetime.today()
 
 customer_type = str(input("member status (normal/premium): ")) #could also add someway of validating this
@@ -85,11 +86,15 @@ else:
 # the password must not be the same as the username
 # bonus neither the username or password can start or end with whitespace
 
-#step
-#create a password variable
-    #pw must be >= 5 characters 
-    #pw cannot be the same/'similar' to username
 
-#create a username variable
-#conditions include:
+while True:
+    username = input('enter username: ')
+    password = input('enter password: ')
+    if len(password) >= 5 and len(password) <= 20 and password != username:
+        if username != username.strip() and password != password.strip(): # here i am saying if username and password do not equal strip method (containing whitespace in either front or back of string), then access granted 
+            print("Acceess Granted!")
+            break
+        else: 
+            print('Invalid password. Try again.')
+
 
