@@ -156,7 +156,7 @@ numbers_plus_5 = [num+5 for num in numbers]
 
 print(numbers_plus_5)
 
-    # BONUS Make a variable named "primes" that is a list containing the prime numbers in the numbers list. *Hint* you may want to make or find a helper function that determines if a given number is prime or not.
+# BONUS Make a variable named "primes" that is a list containing the prime numbers in the numbers list. *Hint* you may want to make or find a helper function that determines if a given number is prime or not.
 
 import sympy
 numbers = [2, 1, 4, 5, 7, 29, -99, 9.17]
